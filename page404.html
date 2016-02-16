@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选课管理</title>
+		<meta name="keywords" content="404,选课"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			#content{
+				margin: 100px auto;
+			}
+			#img{
+				margin:0 auto;
+				/*border: 1px solid red;*/
+			}
+			#img >img{
+				width: 30%;
+				margin: 0 35%;
+			}
+			#action{
+				border: 1px solid red;
+				height: auto;
+				width: 200px;
+				border-radius: 3px;
+				font-weight: bold;
+				font-size: 20px;
+				font-style: inherit;
+				text-align: center;
+				margin: 50px auto;
+				cursor: pointer;
+			}
+			#action >span:last-child{
+				margin-left:30px;
+				
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="content">
+			<div id="img">
+				<img src="http://7xphzu.com1.z0.glb.clouddn.com/error404.png"/>
+			</div>
+			<div id="action">
+				<span onclick="Back()">撤退</span>
+				<span onclick="Index()">首页</span>
+			</div>
+			<div>
+				<textarea name="urlarr" rows="30" cols="70" id="texts" style="display:block;"></textarea>
+			</div>
+		</div>
+		<script type="text/javascript">
+			/**
+		 	* 这是我关于location对象的探究，最终在这里http://www.w3school.com.cn/jsref/dom_obj_location.asp获得真知
+		 	* */
+			var ele;
+			var lo=document.location;
+			var k='';
+			var v='';
+			var item='';
+			var items='';
+			for (ele in lo) {
+				k=ele;
+				v=lo[ele];
+				item=k+'=>'+v+'\n';
+				items +=item;
+			}
+			var infos=document.getElementById("texts");
+			// document.createElement('')
+			infos.innerHTML=items;
+			var lotoarr=lo.toString();
+			
+			function Back(){
+				window.history.back();
+			}
+			function Index(){
+				window.location.href=lo.origin;
+			}
+		</script>
+	</body>
+</html>
