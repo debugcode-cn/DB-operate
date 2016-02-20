@@ -14,6 +14,7 @@
         function queRen(){
             if(confirm('确定选择这些课程？')){
                 window.location.href=document.location.origin;
+                alert('选课成功');
             }else{
                 window.history.back();
                 //在这里在将浏览器刷新一遍就可以了
