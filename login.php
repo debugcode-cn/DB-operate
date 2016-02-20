@@ -51,20 +51,28 @@
                 alert('密码不合法');
             }
         }
+        function cancle(){
+            window.location.href=document.location.origin;
+        }
     </script>
 </head>
 
 <body>
 <div class="login-div">
-    <form action="" method="post">
-        用户名:<br><input type="text" name="username" value="wlz" onblur="judgeid()">
+    <form action="./session_login/session_go.php?action=login" method="post">
+        <label for="un">用户名:</label>
+        <br>
+        <input type="text" name="username" value="wlz" id="un" onblur="judgeid()">
         <!--    <input type="radio" name="name" value="man">男<br/>-->
         <!--    <input type="radio" name="name" value="woman">女-->
         <br>
-        密码:<br><input type="password" name="password" onblur="judgepass()"><br>
+        <label for="pw">密码:</label>
+        <br>
+        <input type="password" name="password" id="pw" onblur="judgepass()"><br>
         <!--    <input type="submit" value="登陆" name="login">-->
         <input type="submit" value="登陆" name="login">
     </form>
+    <input type="button" value="取消" onclick="cancle()">
 </div>
 </body>
 </html>
