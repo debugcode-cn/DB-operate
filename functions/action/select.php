@@ -63,7 +63,7 @@ $results=$state->fetchAll(PDO::FETCH_ASSOC);
         echo '<hr/>',PHP_EOL;
         echo $elo=<<<EOF
     <label for={$name}>选择本课</label>
-    <input type="radio" id={$name} name="{$courseId}">
+    <input type="checkbox" id={$name} name="{$courseId}">
 EOF;
         echo '课程名称:'.$one['coursename'],'    ||    课程描述:'.$one['coursedesc'];
         $idtoname_arr[$courseId]=$name;
